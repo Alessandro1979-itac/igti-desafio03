@@ -15,13 +15,21 @@ export default function Candidates({
         {candidates.map((candidate, index) => {
           const { id } = candidate;
 
-          const previousVoteObject = previousVotes.find((item) => item.id === id);
+          const previousVoteObject = previousVotes.find(
+            (item) => item.id === id
+          );
 
-          const previousVote = !!previousVoteObject ? previousVoteObject.votes : 0;
+          const previousVote = !!previousVoteObject
+            ? previousVoteObject.votes
+            : 0;
 
-          const previousPercentageObject = previousPercentages.find((item) => item.id === id);
+          const previousPercentageObject = previousPercentages.find(
+            (item) => item.id === id
+          );
 
-          const previousPercentage = !!previousPercentageObject ? previousPercentageObject : 0;
+          const previousPercentage = !!previousPercentageObject
+            ? previousPercentageObject.percentage
+            : 0;
 
           return (
             <div key={id}>

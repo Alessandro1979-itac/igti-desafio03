@@ -16,18 +16,22 @@ export default function Candidate({
   position,
 }) {
   const { id, name, votes, percentage, popularity } = candidate;
+
   const imageSource = `${id}.jpg`;
 
-  return(
+  return (
     <div className={css.flexRow}>
       <Position>{position}</Position>
       <Picture imageSource={imageSource} description={name} />
       <Info>
         <Name>{name}</Name>
+
         <Votes value={votes} previous={previousVote} />
+
         <Percentage value={percentage} previous={previousPercentage}>
           {percentage}
         </Percentage>
+
         <Popularity value={popularity} />
       </Info>
     </div>
